@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: rgb(252, 188, 128);
   background-image: linear-gradient(to left, whitesmoke, rgb(252, 188, 128));
@@ -64,15 +68,15 @@ a:visited {
 }
 
 #flower1 {
-  height: 500;
-  padding: 10px;
-  margin-top: 30px 20px 0;
+  position: absolute;
+  left: 0;
+  top: 130px;
 }
 
 #flower2 {
-  height: 500;
-  padding: 10px;
-  margin-left: 50px;
+  position: absolute;
+  right: 0;
+  top: 130px;
 }
 
 .underl {
@@ -104,9 +108,9 @@ a:visited {
 /* menu part  */
 .menu {
   display: flex;
-  gap: 1rem;
+  gap: 0.8rem;
   justify-content: center;
-  padding: 1rem;
+  padding: 0.7rem;
 }
 
 :where(.item1, .item2) {
@@ -139,7 +143,7 @@ img {
 .p1 {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 2rem;
 }
 
 .m .item1 {
@@ -149,7 +153,7 @@ img {
 .m1 {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 6rem;
 }
 
 :is(.s, .m1) :is(.item1, .item2) {
@@ -166,6 +170,31 @@ img {
   text-align: justify;
   font-weight: bolder;
 }
+
+#Starters::after {
+  content: " 🥗";
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  font-size: 50px;
+}
+
+#Main_Course::after {
+  content: " 🍛";
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  font-size: 50px;
+}
+
+#Pasta::after {
+  content: " 🍝";
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  font-size: 50px;
+}
+
 /* menu part :end */
 
 .footer {
@@ -174,6 +203,7 @@ img {
   min-width: 600px;
   min-height: auto;
   margin: 0 25px 20px 20px;
+  margin-top: 1rem;
 }
 
 .footflex {
@@ -212,6 +242,14 @@ img {
   font-weight: 600;
 }
 
+.d::before {
+  content: "🍨 ";
+  display: inline-block;
+  width: 140px;
+  height: 60px;
+  font-size: 100px;
+}
+
 /* Dessert part end */
 
 /* Beverages part */
@@ -224,8 +262,8 @@ img {
 }
 
 #beverages {
-  padding: 15px;
-  margin: 10px 10px;
+  padding: 0 15px 10px 10px;
+  margin: 0 15px 0 0;
 }
 
 .b {
@@ -234,6 +272,14 @@ img {
   margin-top: 0;
   padding: 1rem;
   font-size: 3rem;
+}
+
+.b::before {
+  content: "🍹";
+  display: inline-block;
+  width: 100px;
+  height: 60px;
+  font-size: 80px;
 }
 
 /* Beverages part end  */
@@ -252,7 +298,7 @@ img {
 
 hr {
   background-color: #000;
-  height: 500px;
+  height: 600px;
   width: 1px;
   margin: 10px 30px 0 0;
 }
@@ -264,6 +310,46 @@ hr {
   text-align: justify;
 }
 
+/* Button part */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+button {
+  padding: 1rem;
+  background-color: antiquewhite;
+  border: 1px solid black;
+  border-radius: 15px;
+  color: #000;
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 5px 5px 10px black;
+  width: 120px;
+}
+
+button:hover {
+  color: #fff;
+  background-color: hsl(0, 0%, 50%, 0.6);
+  box-shadow: 5px 5px 10px rgb(255, 255, 255);
+}
+
+.buttons h2 {
+  font-weight: 500;
+  color: rgb(28, 40, 28);
+}
+
+#beverages {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+/*button part end  */
+
 /* mobile devices */
 
 @media screen and (max-width: 480px) {
@@ -272,6 +358,7 @@ hr {
     width: 100%;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     overflow-x: hidden;
   }
 
@@ -290,16 +377,19 @@ hr {
   .flex1 {
     display: flex;
     align-items: center;
-    gap: 2px;
+    gap: 40px;
   }
 
-  .container header img {
+  #leaves {
     width: 50px;
     height: auto;
+    position: absolute;
+    top: 4px;
+    left: 5px;
   }
 
   .flex1 h1 {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     white-space: nowrap;
     font-weight: bolder;
   }
@@ -353,21 +443,23 @@ hr {
 
   .flex3 {
     display: flex;
-    gap: 4rem;
+    gap: 10rem;
   }
 
   #flower1 {
     height: 50px;
     width: 50px;
-    padding: 5px;
-    margin-top: 30px 20px 0;
+    position: absolute;
+    left: 0;
+    top: 60px;
   }
 
   #flower2 {
     height: 50px;
     width: 50px;
-    padding: 5px;
-    margin-left: 45px;
+    position: absolute;
+    right: 0;
+    top: 60px;
   }
 
   /* container part end  */
@@ -552,9 +644,59 @@ hr {
     margin: 5px 5px;
   }
   /* Beverages part end  */
+
+  /* Button part */
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  button {
+    padding: 0.5rem;
+    background-color: antiquewhite;
+    border: 1px solid black;
+    border-radius: 15px;
+    color: #000;
+    font-weight: 700;
+    font-size: 0.7rem;
+    box-shadow: 5px 5px 10px black;
+    width: 90px;
+  }
+
+  button:hover {
+    color: #fff;
+    background-color: hsl(0, 0%, 50%, 0.6);
+    box-shadow: 5px 5px 10px rgb(255, 255, 255);
+    cursor: pointer;
+  }
+
+  .buttons h2 {
+    font-weight: 500;
+    color: rgb(28, 40, 28);
+  }
+
+  #beverages {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* button part end  */
 }
 
 @media (max-width: 320px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
   .container {
     gap: 10px;
   }
@@ -643,4 +785,396 @@ hr {
     margin-left: 20px;
     margin-right: 5px;
   }
+  /* Button part */
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  button {
+    padding: 0.5rem;
+    background-color: antiquewhite;
+    border: 1px solid black;
+    border-radius: 15px;
+    color: #000;
+    font-weight: 700;
+    font-size: 0.7rem;
+    box-shadow: 5px 5px 10px black;
+    width: 90px;
+  }
+
+  button:hover {
+    color: #fff;
+    background-color: hsl(0, 0%, 50%, 0.6);
+    box-shadow: 5px 5px 10px rgb(255, 255, 255);
+    cursor: pointer;
+  }
+
+  .buttons h2 {
+    font-weight: 500;
+    color: rgb(28, 40, 28);
+  }
+
+  #beverages {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #Desserts button {
+    margin-left: 8px;
+  }
+
+  /*button part end  */
+}
+/* smaller mobile landscape styles */
+@media (max-width: 768px) and (orientation: landscape) {
+  html,
+  body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  /* container part  */
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    color: black;
+    gap: 5px;
+    border-bottom: 0.5px solid gray;
+  }
+
+  .flex1 {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  #leaves {
+    width: 50px;
+    height: auto;
+    position: absolute;
+    top: 4px;
+    left: 5px;
+  }
+
+  .flex1 h1 {
+    font-size: 1rem;
+    white-space: nowrap;
+    font-weight: bolder;
+  }
+
+  .flex1 h2 {
+    font-size: 0.7rem;
+    font-weight: 900;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  nav a {
+    white-space: nowrap;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+  .om {
+    font-size: 25px;
+    margin: 0;
+    text-align: center;
+    font-weight: bolder;
+  }
+
+  .linee {
+    display: block;
+    width: 60px; /* or your desired width */
+    height: 50px;
+    align-self: center;
+    margin-top: -20px;
+    padding-top: 0;
+  }
+
+  .underl {
+    display: flex;
+    flex-direction: column;
+    gap: -10px;
+  }
+
+  .cutlery {
+    width: 50px;
+    height: 50px;
+  }
+
+  .flex2 {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+  }
+
+  .flex3 {
+    display: flex;
+    gap: 15rem;
+  }
+
+  #flower1 {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    left: 0;
+    top: 62px;
+  }
+
+  #flower2 {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    right: 0;
+    top: 62px;
+  }
+
+  /* container part end  */
+
+  /* menu part  */
+  .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  :where(#Starters, #Main_Course, #Pasta) {
+    margin-bottom: 25px;
+    margin-top: 0;
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  :where(.item1, .item2) {
+    display: flex;
+    gap: 0.5rem;
+    color: #000;
+  }
+
+  .s {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    font-size: 0.7rem;
+  }
+
+  img {
+    width: 150px;
+    height: 100px;
+  }
+
+  .cutlery {
+    width: 50px;
+    height: 50px;
+  }
+
+  hr {
+    background-color: #000;
+    height: 1px;
+    width: 700px;
+    margin: 20px 0 20px 10px;
+  }
+
+  .item1,
+  .item2 {
+    gap: 2rem;
+  }
+
+  :is(.m, .st, .p, ) :is(.item1, .item2) :is(h1) {
+    font-size: 1.5rem;
+    text-align: justify;
+    font-weight: bolder;
+  }
+
+  :is(.m, .st, .p, #Desserts) :is(.item1, .item2) :is(h2, p) {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: justify;
+  }
+
+  .m .item1 {
+    gap: 4rem;
+  }
+
+  .m1 {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .s .item2 img {
+    width: 200px;
+    height: 100px;
+  }
+
+  .p1 .item2 img {
+    width: 150px;
+    height: 100px;
+  }
+  /* menu part*/
+
+  /* Dessert part */
+  .d {
+    text-align: center;
+    color: #000;
+    font-weight: 900;
+    font-size: 2rem;
+    margin-right: 170px;
+  }
+
+  .line {
+    width: 500px;
+    height: 1px;
+    font-weight: bolder;
+    color: #000;
+    /* margin: 20px 2px 50px 10px; */
+    margin-top: 30px;
+    margin-bottom: 0px;
+    margin-left: 120px;
+  }
+
+  #Desserts {
+    display: flex;
+    gap: 1rem;
+    padding: 0.6rem;
+    align-items: center;
+    margin-bottom: 0;
+    padding: 60px 0 0 0;
+  }
+
+  .details h1 {
+    font-size: 0.9rem;
+  }
+  .details p,
+  .details h2 {
+    font-size: 0.7rem;
+  }
+
+  /* spac after Desserts is important */
+  #Desserts :is(.item1 img, .item2 img) {
+    height: 100px;
+    width: 100px;
+    margin-left: 10px;
+  }
+
+  #Desserts :is(.item1, .item2) :is(h1) {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bolder;
+  }
+
+  #Desserts :is(.item1, .item2) :is(h2, p) {
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  #Desserts :is(.item1, .item2) {
+    gap: 3rem;
+  }
+
+  .d::before {
+    content: "🍨 ";
+    display: inline-block;
+    width: 90px;
+    height: 60px;
+    font-size: 70px;
+  }
+  /* Desserts part end  */
+
+  .footer {
+    border: 0.5px solid rgb(111, 111, 120);
+    border-radius: 10px;
+    min-width: 300px;
+    min-height: auto;
+    margin: 0 10px 10px 10px;
+  }
+
+  .footflex {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* Beverages part  */
+  .b {
+    color: #000;
+    text-align: center;
+    margin-top: 0;
+    padding: 0.7rem;
+    font-size: 2rem;
+  }
+
+  :where(.b1, .b2, .b3, .b4) {
+    display: flex;
+    gap: 8rem;
+    justify-content: space-between;
+    color: #000;
+    font-size: 0.7rem;
+  }
+
+  #beverages {
+    padding: 0 10px 10px 10px;
+    margin: 5px 5px;
+  }
+  /* Beverages part end  */
+
+  /* Button part */
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  button {
+    padding: 0.6rem;
+    background-color: antiquewhite;
+    border: 1px solid black;
+    border-radius: 15px;
+    color: #000;
+    font-weight: 700;
+    font-size: 0.7rem;
+    box-shadow: 5px 5px 10px black;
+    width: 90px;
+  }
+
+  button:hover {
+    color: #fff;
+    background-color: hsl(0, 0%, 50%, 0.6);
+    box-shadow: 5px 5px 10px rgb(255, 255, 255);
+    cursor: pointer;
+  }
+
+  .buttons h2 {
+    font-weight: 500;
+    color: rgb(28, 40, 28);
+  }
+
+  #beverages {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* button part end  */
 }
