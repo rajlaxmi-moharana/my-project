@@ -701,23 +701,39 @@ button:hover {
     gap: 10px;
   }
 
+  #leaves {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 25px;
+    height: 25px;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4.5px;
+  }
+
+  .flex3 {
+    display: flex;
+    justify-content: center;
+  }
+
   .flex1 {
-    gap: 2.5px;
+    gap: 4px;
   }
 
   .om {
     font-size: 25px;
   }
 
-  .flex2 {
-    gap: 2px;
-    /* margin-left: 20px; */
-  }
-
   #flower1,
-  #flower2 {
-    position: absolute;
-    left: -10000px;
+  #flower2,
+  .cutlery {
+    display: none;
   }
 
   :where(#Starters, #Main_Course, #Pasta) {
@@ -746,6 +762,10 @@ button:hover {
     font-weight: bold;
   }
 
+  .d::before {
+    display: none;
+  }
+
   #Desserts :is(.item1, .item2)img {
     width: 200px;
     height: 80px;
@@ -764,6 +784,10 @@ button:hover {
     margin-top: 0;
     padding: 0.7rem;
     font-size: 2rem;
+  }
+
+  .b::before {
+    display: none;
   }
 
   :where(.b1, .b2, .b3, .b4) {
@@ -831,7 +855,7 @@ button:hover {
   /*button part end  */
 }
 /* smaller mobile landscape styles */
-@media (max-width: 768px) and (orientation: landscape) {
+@media (orientation: landscape) and (max-width: 1000px) {
   html,
   body {
     width: 100%;
@@ -926,7 +950,7 @@ button:hover {
 
   .flex3 {
     display: flex;
-    gap: 15rem;
+    gap: clamp(3rem, 40vw, 50rem);
   }
 
   #flower1 {
@@ -943,6 +967,61 @@ button:hover {
     position: absolute;
     right: 0;
     top: 62px;
+  }
+
+  @media (max-width: 800px) {
+    #flower1,
+    #flower2 {
+      width: 35px;
+      height: 35px;
+    }
+
+    .cutlery {
+      width: 40px;
+      height: 40px;
+    }
+
+    .om {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    #flower1,
+    #flower2 {
+      width: 30px;
+      height: 30px;
+    }
+
+    .cutlery {
+      width: 30px;
+      height: 30px;
+    }
+
+    .om {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 500px) {
+    #flower1 {
+      position: absolute;
+      top: 78px;
+      left: 0;
+    }
+    #flower2 {
+      position: absolute;
+      top: 78px;
+      right: 0;
+    }
+
+    .cutlery {
+      display: none;
+    }
+
+    .om {
+      font-size: 1.2rem;
+    }
   }
 
   /* container part end  */
@@ -989,8 +1068,8 @@ button:hover {
   hr {
     background-color: #000;
     height: 1px;
-    width: 700px;
-    margin: 20px 0 20px 10px;
+    width: 100%;
+    min-width: 700px;
   }
 
   .item1,
@@ -1041,14 +1120,14 @@ button:hover {
   }
 
   .line {
-    width: 500px;
+    width: 100%;
+    min-width: 500px;
     height: 1px;
     font-weight: bolder;
     color: #000;
     /* margin: 20px 2px 50px 10px; */
     margin-top: 30px;
     margin-bottom: 0px;
-    margin-left: 120px;
   }
 
   #Desserts {
